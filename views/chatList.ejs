@@ -1,0 +1,27 @@
+<%-include('header.ejs')%>
+
+    <h1> 문의받은 내용 </h1>
+<table border=1>
+    <tr>
+        <th> idx</th>
+        <th> 이름</th>
+        <th> 이메일</th>
+        <th> 제목</th>
+        <th> 내용</th>
+        <th> 등록일</th>
+        <th> 삭제</th>
+    </tr>
+    <% lists.forEach(function(item){ %>
+    <tr>
+        <td> <%=item.idx%></td>
+        <td> <%=item.name%></td>
+        <td> <%=item.email%></td>
+        <td> <%=item.title%></td>
+        <td> <%=item.memo ? item.memo.replaceAll("\n", "<br>") : '' %></td>
+        <td> <%=item.regdate%></td>
+        <td><a href="/chatDelete?idx=<%=item.idx%>" onclick="return confirm('정말 삭제하겠습니까?')">삭제</a></td>
+    </tr>
+    <% }) %>
+</table>
+
+<%-include('footer.ejs')%>

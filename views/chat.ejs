@@ -1,0 +1,15 @@
+<%-include('header.ejs')%>
+
+<form action="/contact" method="post">
+    <ul>
+        <li> 궁금사항 </li>
+        <li> 이름 : <input type="text" name="name" required></li>
+        <li> 이메일 : <input type="text" name="email" required></li>
+        <li> 제목 : <input type="text" name="title" required></li>
+        <li> 내용 <br>
+        <textarea name="memo" cols="50" rows="10" required></textarea></li>
+        <button> 보내기 </button>
+    </ul>
+</form>
+    
+<%-include('footer.ejs')%>
